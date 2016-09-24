@@ -29,29 +29,64 @@ namespace DuckyScriptRunner.Translator
         {
             switch (parameter)
             {
+                case "BREAK":
+                    return VirtualKeyCode.CANCEL;
                 case "DELETE":
                     return VirtualKeyCode.DELETE;
+                case "DOWNARROW":
+                    return VirtualKeyCode.DOWN;
+                case "END":
+                    return VirtualKeyCode.END;
+                case "ESC":
+                case "ESCAPE":
+                    return VirtualKeyCode.ESCAPE;
+                case "F1":
+                    return VirtualKeyCode.F1;
+                case "F2":
+                    return VirtualKeyCode.F2;
+                case "F3":
+                    return VirtualKeyCode.F3;
+                case "F4":
+                    return VirtualKeyCode.F4;
+                case "F5":
+                    return VirtualKeyCode.F5;
+                case "F6":
+                    return VirtualKeyCode.F6;
+                case "F7":
+                    return VirtualKeyCode.F7;
+                case "F8":
+                    return VirtualKeyCode.F8;
+                case "F9":
+                    return VirtualKeyCode.F9;
+                case "F10":
+                    return VirtualKeyCode.F10;
+                case "F11":
+                    return VirtualKeyCode.F11;
+                case "F12":
+                    return VirtualKeyCode.F12;
+                case "GUI":
+                case "WINDOWS":
+                    return VirtualKeyCode.LWIN;
                 case "HOME":
                     return VirtualKeyCode.HOME;
                 case "INSERT":
                     return VirtualKeyCode.INSERT;
-                case "PAGEUP":
-                    return VirtualKeyCode.PRIOR;
-                case "PAGEDOWN":
-                    return VirtualKeyCode.NEXT;
-                case "GUI":
-                case "WINDOWS":
-                    return VirtualKeyCode.LWIN;
-                case "UPARROW":
-                    return VirtualKeyCode.UP;
-                case "DOWNARROW":
-                    return VirtualKeyCode.DOWN;
                 case "LEFTARROW":
                     return VirtualKeyCode.LEFT;
+                case "PAGEDOWN":
+                    return VirtualKeyCode.NEXT;
+                case "PAGEUP":
+                    return VirtualKeyCode.PRIOR;
+                case "PAUSE":
+                    return VirtualKeyCode.PAUSE;
                 case "RIGHTARROW":
                     return VirtualKeyCode.RIGHT;
+                case "SPACE":
+                    return VirtualKeyCode.SPACE;
                 case "TAB":
                     return VirtualKeyCode.TAB;
+                case "UPARROW":
+                    return VirtualKeyCode.UP;
                 default:
                     throw new DuckyScriptRunnerException($"Illegal name '{parameter}' for KeyCode.");
             }

@@ -18,7 +18,15 @@ namespace DuckyScriptRunner.Translator.Commands
             IDuckyCommand cmd;
             switch (cmdTxt)
             {
+                case "ALT":
+                    cmd = new AltCommand();
+                    break;
+                case "CTRL":
+                case "CONTROL":
+                    cmd = new CtrlCommand();
+                    break;
                 case "DEFAULTDELAY":
+                case "DEFAULT_DELAY":
                     cmd = new DefaultDelayCommand();
                     break;
                 case "DELAY":
