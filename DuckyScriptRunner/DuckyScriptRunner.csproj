@@ -50,6 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandFactory.cs" />
     <Compile Include="Exceptions\ConverterException.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
@@ -59,8 +60,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translator\Commands\EnterCommand.cs" />
+    <Compile Include="Translator\Commands\GuiCommand.cs" />
+    <Compile Include="Translator\Commands\StringCommand.cs" />
+    <Compile Include="Translator\DuckyCommandBase.cs" />
     <Compile Include="Translator\Converter.cs" />
     <Compile Include="Translator\DuckyTranslator.cs" />
+    <Compile Include="Translator\IDuckyCommand.cs" />
+    <Compile Include="Translator\LineSplitter.cs" />
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
