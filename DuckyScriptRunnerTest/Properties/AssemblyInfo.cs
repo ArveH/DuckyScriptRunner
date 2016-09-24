@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DuckyScriptRunner")]
+[assembly: AssemblyTitle("DuckyScriptRunnerTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DuckyScriptRunner")]
+[assembly: AssemblyProduct("DuckyScriptRunnerTest")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("06af6b3a-efa8-47c1-96ee-3783097bdd5f")]
+[assembly: Guid("75d155bf-fcdf-4463-8785-f1a23e87f449")]
 
 // Version information for an assembly consists of the following four values:
 //
