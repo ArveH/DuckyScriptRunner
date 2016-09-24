@@ -34,5 +34,18 @@ namespace DuckyScriptRunnerTest
             Throws.InstanceOf<DuckyScriptRunnerException>().With.Message.EqualTo("Line cannot be null or empty."));
         }
 
+        [Test]
+        public void TestGetCommandParameter()
+        {
+            var param = LineSplitter.GetCommandParameter("GUI r");
+            Assert.That(param, Is.EqualTo("r"));
+        }
+
+        [Test]
+        public void TestGetCommandParameter_When_Empty()
+        {
+            var param = LineSplitter.GetCommandParameter("ENTER");
+            Assert.That(param, Is.EqualTo(""));
+        }
     }
 }

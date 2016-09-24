@@ -9,7 +9,7 @@ namespace DuckyScriptRunner.Translator.Commands
 
         public override void Execute(IKeyboardSimulator keyboard)
         {
-            keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, Converter.ToKeyCode(Value[0]));
+            keyboard.ModifiedKeyStroke(VirtualKeyCode.LWIN, Converter.ToKeyCode(Parameter[0]));
         }
     }
 }

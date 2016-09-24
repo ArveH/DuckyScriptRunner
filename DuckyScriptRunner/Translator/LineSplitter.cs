@@ -7,7 +7,7 @@ namespace DuckyScriptRunner.Translator
 {
     public static class LineSplitter
     {
-        public static IList<string> SplitIntoLines(string allText)
+        public static List<string> SplitIntoLines(string allText)
         {
             return allText
                 .Split(new [] {'\n'}, StringSplitOptions.RemoveEmptyEntries)
@@ -23,6 +23,13 @@ namespace DuckyScriptRunner.Translator
                     $"Ducky says that all commands should be upper case. '{cmd}' is not.");
 
             return cmd;
+        }
+
+        public static string GetCommandParameter(string line)
+        {
+            if (string.IsNullOrWhiteSpace(line)) throw new DuckyScriptRunnerException("Line cannot be null or empty.");
+            var indexOfFirstSpace = line.IndexOf(' ');
+            return indexOfFirstSpace == -1 ? "" : line.Substring(indexOfFirstSpace + 1);
         }
     }
 }

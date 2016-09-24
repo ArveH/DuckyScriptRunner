@@ -6,6 +6,6 @@ namespace DuckyScriptRunner.Translator
     {
         string Name { get; }
         void Execute(IKeyboardSimulator keyboard);
-        string Value { get; set; }
+        string Parameter { get; set; }
     }
 }

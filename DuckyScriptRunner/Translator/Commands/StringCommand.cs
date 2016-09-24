@@ -7,7 +7,7 @@ namespace DuckyScriptRunner.Translator.Commands
         public override string Name { get; } = "STRING";
         public override void Execute(IKeyboardSimulator keyboard)
         {
-            keyboard.TextEntry(Value);
+            keyboard.TextEntry(Parameter);
         }
     }
 }
