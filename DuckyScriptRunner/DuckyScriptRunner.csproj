@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandFactory.cs" />
-    <Compile Include="Exceptions\ConverterException.cs" />
+    <Compile Include="Exceptions\DuckyScriptRunnerException.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
     </Compile>

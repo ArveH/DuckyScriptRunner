@@ -31,7 +31,7 @@ namespace DuckyScriptRunner
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            var commandLines = LineSplitter.Split(txtScriptWindow.Text);
+            var commandLines = LineSplitter.SplitIntoLines(txtScriptWindow.Text);
             var commands = CommandFactory.CreateCommands(commandLines);
 
             var translator = new DuckyTranslator();

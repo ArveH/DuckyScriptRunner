@@ -12,7 +12,7 @@ namespace DuckyScriptRunner.Translator
             // so it should never be upper case (Ducky script)
             if (ch >= 'A' && ch <= 'Z')
             {
-                throw new ConverterException($"Can't convert upper case letter '{ch}'");
+                throw new DuckyScriptRunnerException($"Can't convert upper case letter '{ch}'");
             }
 
             // But WindowsInput package uses upper case, so we need to convert case

@@ -35,7 +35,7 @@ namespace DuckyScriptRunner.Translator
             //    {
             //        _keyboard.KeyPress(VirtualKeyCode.RETURN);
             //    }
-            }
+            //}
         }
     }
 }

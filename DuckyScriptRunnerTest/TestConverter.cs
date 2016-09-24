@@ -23,7 +23,7 @@ namespace DuckyScriptRunnerTest
             {
                 var keyCode = Converter.ToKeyCode('R');
             }, 
-            Throws.InstanceOf<ConverterException>().With.Message.EqualTo("Can't convert upper case letter 'R'"));
+            Throws.InstanceOf<DuckyScriptRunnerException>().With.Message.EqualTo("Can't convert upper case letter 'R'"));
         }
 
     }
