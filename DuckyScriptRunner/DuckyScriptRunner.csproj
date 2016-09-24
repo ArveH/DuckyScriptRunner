@@ -66,6 +66,7 @@
     <Compile Include="Translator\Commands\GuiCommand.cs" />
     <Compile Include="Translator\Commands\MenuCommand.cs" />
     <Compile Include="Translator\Commands\RemCommand.cs" />
+    <Compile Include="Translator\Commands\ShiftCommand.cs" />
     <Compile Include="Translator\Commands\StringCommand.cs" />
     <Compile Include="Translator\Commands\DuckyCommandBase.cs" />
     <Compile Include="Translator\Converter.cs" />

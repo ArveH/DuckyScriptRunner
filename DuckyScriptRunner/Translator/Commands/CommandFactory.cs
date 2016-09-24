@@ -31,6 +31,9 @@ namespace DuckyScriptRunner.Translator.Commands
                 case "WINDOWS":
                     cmd = new GuiCommand();
                     break;
+                case "SHIFT":
+                    cmd = new ShiftCommand();
+                    break;
                 case "MENU":
                     cmd = new MenuCommand();
                     break;

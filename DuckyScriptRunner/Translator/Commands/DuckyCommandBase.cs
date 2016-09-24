@@ -7,6 +7,6 @@ namespace DuckyScriptRunner.Translator.Commands
         public abstract string Name { get; }
         public abstract void Execute(IKeyboardSimulator keyboard);
 
-        public string Parameter { get; set; }
+        public virtual string Parameter { get; set; }
     }
 }
