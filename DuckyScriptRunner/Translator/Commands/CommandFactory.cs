@@ -52,7 +52,15 @@ namespace DuckyScriptRunner.Translator.Commands
                     cmd = new StringCommand();
                     break;
                 default:
-                    throw new DuckyScriptRunnerException($"Command not found: '{cmdTxt}'.");
+                    if (Converter.IsRecognizedKey(cmdTxt))
+                    {
+                        cmd = new ExtendedCommand(cmdTxt);
+                    }
+                    else
+                    {
+                        throw new DuckyScriptRunnerException($"Command not found: '{cmdTxt}'.");
+                    }
+                    break;
             }
             cmd.Parameter = LineSplitter.GetCommandParameter(line);
 

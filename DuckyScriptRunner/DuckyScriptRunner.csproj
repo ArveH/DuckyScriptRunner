@@ -66,6 +66,7 @@
     <Compile Include="Translator\Commands\DelayCommand.cs" />
     <Compile Include="Translator\Commands\EnterCommand.cs" />
     <Compile Include="Translator\Commands\GuiCommand.cs" />
+    <Compile Include="Translator\Commands\ExtendedCommand.cs" />
     <Compile Include="Translator\Commands\MenuCommand.cs" />
     <Compile Include="Translator\Commands\RemCommand.cs" />
     <Compile Include="Translator\Commands\ShiftCommand.cs" />

@@ -19,10 +19,23 @@ namespace DuckyScriptRunner.Translator
             // But WindowsInput package uses upper case, so we need to convert case
             if (ch >= 'a' && ch <= 'z')
             {
-                return (VirtualKeyCode)Convert.ToByte(char.ToUpper(ch));
+                return (VirtualKeyCode) Convert.ToByte(char.ToUpper(ch));
             }
 
-            return (VirtualKeyCode)Convert.ToByte(ch);
+            return (VirtualKeyCode) Convert.ToByte(ch);
+        }
+
+        public static bool IsRecognizedKey(string parameter)
+        {
+            try
+            {
+                var tmp = ToKeyCode(parameter);
+                return true;
+            }
+            catch (DuckyScriptRunnerException)
+            {
+                return false;
+            }
         }
 
         public static VirtualKeyCode ToKeyCode(string parameter)
@@ -31,9 +44,12 @@ namespace DuckyScriptRunner.Translator
             {
                 case "BREAK":
                     return VirtualKeyCode.CANCEL;
+                case "CAPSLOCK":
+                    return VirtualKeyCode.CAPITAL;
                 case "DELETE":
                     return VirtualKeyCode.DELETE;
                 case "DOWNARROW":
+                case "DOWN":
                     return VirtualKeyCode.DOWN;
                 case "END":
                     return VirtualKeyCode.END;
@@ -72,20 +88,29 @@ namespace DuckyScriptRunner.Translator
                 case "INSERT":
                     return VirtualKeyCode.INSERT;
                 case "LEFTARROW":
+                case "LEFT":
                     return VirtualKeyCode.LEFT;
+                case "NUMLOCK":
+                    return VirtualKeyCode.NUMLOCK;
                 case "PAGEDOWN":
                     return VirtualKeyCode.NEXT;
                 case "PAGEUP":
                     return VirtualKeyCode.PRIOR;
                 case "PAUSE":
                     return VirtualKeyCode.PAUSE;
+                case "PRINTSCREEN":
+                    return VirtualKeyCode.SNAPSHOT;
                 case "RIGHTARROW":
+                case "RIGHT":
                     return VirtualKeyCode.RIGHT;
+                case "SCROLLLOCK":
+                    return VirtualKeyCode.SCROLL;
                 case "SPACE":
                     return VirtualKeyCode.SPACE;
                 case "TAB":
                     return VirtualKeyCode.TAB;
                 case "UPARROW":
+                case "UP":
                     return VirtualKeyCode.UP;
                 default:
                     throw new DuckyScriptRunnerException($"Illegal name '{parameter}' for KeyCode.");
