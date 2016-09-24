@@ -39,5 +39,10 @@ namespace DuckyScriptRunner
             Thread.Sleep(500);
             translator.Run(commands);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
