@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using WindowsInput;
 using WindowsInput.Native;
+using DuckyScriptRunner.Translator;
 
 namespace DuckyScriptRunner
 {
@@ -29,6 +30,9 @@ namespace DuckyScriptRunner
 
         private void btnRun_Click(object sender, EventArgs e)
         {
+            var translator = new DuckyTranslator();
+            translator.Run(txtScriptWindow.Text.Split('\n'));
+
             var inputSimulator = new InputSimulator();
             inputSimulator.Keyboard
                 .ModifiedKeyStroke(VirtualKeyCode.LWIN, VirtualKeyCode.VK_R)

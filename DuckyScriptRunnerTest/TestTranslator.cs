@@ -13,8 +13,9 @@ namespace DuckyScriptRunnerTest
             var translator = new DuckyTranslator();
             var commands = new List<string>
             {
-                "GUI R",
-                "STRING notepad"
+                "GUI r",
+                "STRING notepad.exe",
+                "ENTER"
             };
             translator.Run(commands);
         }
