@@ -138,6 +138,7 @@
             this.btnLoadScript.TabIndex = 4;
             this.btnLoadScript.Text = "Load Script";
             this.btnLoadScript.UseVisualStyleBackColor = true;
+            this.btnLoadScript.Click += new System.EventHandler(this.btnLoadScript_Click);
             // 
             // panel3
             // 

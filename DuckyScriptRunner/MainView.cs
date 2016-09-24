@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using WindowsInput;
@@ -28,6 +29,17 @@ namespace DuckyScriptRunner
         public MainView()
         {
             InitializeComponent();
+        }
+
+        private void btnLoadScript_Click(object sender, EventArgs e)
+        {
+            using (var selectFileDialog = new OpenFileDialog())
+            {
+                if (selectFileDialog.ShowDialog() != DialogResult.OK) return;
+
+                var fileName = selectFileDialog.FileName;
+                txtScriptWindow.Text = File.ReadAllText(fileName);
+            }
         }
 
         private void btnRun_Click(object sender, EventArgs e)
