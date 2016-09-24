@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Translator\Commands\AltCommand.cs" />
-    <Compile Include="Translator\Commands\CommandFactory.cs" />
+    <Compile Include="Translator\CommandFactory.cs" />
     <Compile Include="Exceptions\DuckyScriptRunnerException.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>

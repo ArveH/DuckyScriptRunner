@@ -1,15 +1,53 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DuckyScriptRunner.Exceptions;
+using DuckyScriptRunner.Translator.Commands;
 
-namespace DuckyScriptRunner.Translator.Commands
+namespace DuckyScriptRunner.Translator
 {
     internal class CommandFactory
     {
         public static List<IDuckyCommand> CreateCommands(List<string> commandLines)
         {
-            // TODO: Add Delay after each command until next DEFAULTDELAY
-            return commandLines.Select(CreateCommand).ToList();
+            List<IDuckyCommand> commands = new List<IDuckyCommand>(commandLines.Count*2); // 
+            var defaultDelay = 0;
+            if (commandLines.Count > 0 && (CreateCommand(commandLines[0]).Name == "DEFAULTDELAY"))
+            {
+                defaultDelay = Convert.ToInt32(CreateCommand(commandLines[0]).Parameter);
+            }
+
+            for (var i = 0; i < commandLines.Count; i++)
+            {
+                var command = CreateCommand(commandLines[i]);
+                if (command.Name == "REPLAY")
+                {
+                    ReplayCommands(CreateCommand(commandLines[i-1]), Convert.ToInt32(command.Parameter), commands);
+                    continue;
+                }
+
+                commands.Add(command);
+                if (defaultDelay > 0)
+                {
+                    if (IgnoreDelayForThisCommand(command)) continue;
+                    commands.Add(new DelayCommand() { Parameter = defaultDelay.ToString() });
+                }
+            }
+
+            return commands;
+        }
+
+        private static bool IgnoreDelayForThisCommand(IDuckyCommand command)
+        {
+            return command.Name == "REM" || command.Name == "DELAY" || command.Name == "DEFAULTDELAY";
+        }
+
+        private static void ReplayCommands(IDuckyCommand command, int replayCount, List<IDuckyCommand> commands)
+        {
+            for (var i = 0; i < replayCount; i++)
+            {
+                commands.Add(command);
+            }
         }
 
         private static IDuckyCommand CreateCommand(string line)

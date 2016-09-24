@@ -36,7 +36,7 @@ namespace DuckyScriptRunner
             var commands = CommandFactory.CreateCommands(commandLines);
 
             var translator = new DuckyTranslator();
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             translator.Run(commands);
         }
     }

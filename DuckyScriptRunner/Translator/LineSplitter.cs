@@ -18,7 +18,7 @@ namespace DuckyScriptRunner.Translator
         {
             if (string.IsNullOrWhiteSpace(line)) throw new DuckyScriptRunnerException("Line cannot be null or empty.");
             var cmd = line.Split(' ')[0];
-            if (!cmd.All(char.IsUpper))
+            if (!cmd.All(c => char.IsUpper(c) || c=='_'))
                 throw new DuckyScriptRunnerException(
                     $"Ducky says that all commands should be upper case. '{cmd}' is not.");
 
