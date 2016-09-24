@@ -64,6 +64,7 @@
     <Compile Include="Translator\Commands\DelayCommand.cs" />
     <Compile Include="Translator\Commands\EnterCommand.cs" />
     <Compile Include="Translator\Commands\GuiCommand.cs" />
+    <Compile Include="Translator\Commands\MenuCommand.cs" />
     <Compile Include="Translator\Commands\RemCommand.cs" />
     <Compile Include="Translator\Commands\StringCommand.cs" />
     <Compile Include="Translator\Commands\DuckyCommandBase.cs" />

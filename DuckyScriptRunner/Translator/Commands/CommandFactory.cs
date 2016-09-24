@@ -28,7 +28,11 @@ namespace DuckyScriptRunner.Translator.Commands
                     cmd = new EnterCommand();
                     break;
                 case "GUI":
+                case "WINDOWS":
                     cmd = new GuiCommand();
+                    break;
+                case "MENU":
+                    cmd = new MenuCommand();
                     break;
                 case "REM":
                     cmd = new RemCommand();
