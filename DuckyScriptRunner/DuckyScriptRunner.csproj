@@ -60,6 +60,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translator\Commands\DefaultDelayCommand.cs" />
+    <Compile Include="Translator\Commands\DelayCommand.cs" />
     <Compile Include="Translator\Commands\EnterCommand.cs" />
     <Compile Include="Translator\Commands\GuiCommand.cs" />
     <Compile Include="Translator\Commands\RemCommand.cs" />

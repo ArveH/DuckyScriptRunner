@@ -8,6 +8,7 @@ namespace DuckyScriptRunner.Translator.Commands
     {
         public static List<IDuckyCommand> CreateCommands(List<string> commandLines)
         {
+            // TODO: Add Delay after each command until next DEFAULTDELAY
             return commandLines.Select(CreateCommand).ToList();
         }
 
@@ -17,6 +18,12 @@ namespace DuckyScriptRunner.Translator.Commands
             IDuckyCommand cmd;
             switch (cmdTxt)
             {
+                case "DEFAULTDELAY":
+                    cmd = new DefaultDelayCommand();
+                    break;
+                case "DELAY":
+                    cmd = new DelayCommand();
+                    break;
                 case "ENTER":
                     cmd = new EnterCommand();
                     break;
