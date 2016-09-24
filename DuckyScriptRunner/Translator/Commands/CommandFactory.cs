@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DuckyScriptRunner.Exceptions;
-using DuckyScriptRunner.Translator;
-using DuckyScriptRunner.Translator.Commands;
 
-namespace DuckyScriptRunner
+namespace DuckyScriptRunner.Translator.Commands
 {
     internal class CommandFactory
     {
@@ -24,6 +22,9 @@ namespace DuckyScriptRunner
                     break;
                 case "GUI":
                     cmd = new GuiCommand();
+                    break;
+                case "REM":
+                    cmd = new RemCommand();
                     break;
                 case "STRING":
                     cmd = new StringCommand();

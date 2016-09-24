@@ -10,8 +10,8 @@ namespace DuckyScriptRunner.Translator
         public static List<string> SplitIntoLines(string allText)
         {
             return allText
-                .Split(new [] {'\n'}, StringSplitOptions.RemoveEmptyEntries)
-                .Select(line => line.Trim().TrimEnd('\r')).ToList();
+                .Split(new [] {'\n', '\r' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(line => line.Trim()).ToList();
         }
 
         public static string GetCommand(string line)

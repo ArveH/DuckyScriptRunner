@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using WindowsInput;
 using WindowsInput.Native;
 using DuckyScriptRunner.Translator;
+using DuckyScriptRunner.Translator.Commands;
 
 namespace DuckyScriptRunner
 {

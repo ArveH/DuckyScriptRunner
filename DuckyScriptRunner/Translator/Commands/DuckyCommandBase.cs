@@ -1,6 +1,6 @@
 ﻿using WindowsInput;
 
-namespace DuckyScriptRunner.Translator
+namespace DuckyScriptRunner.Translator.Commands
 {
     public abstract class DuckyCommandBase: IDuckyCommand
     {

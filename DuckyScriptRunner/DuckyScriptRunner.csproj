@@ -50,7 +50,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandFactory.cs" />
+    <Compile Include="Translator\Commands\CommandFactory.cs" />
     <Compile Include="Exceptions\DuckyScriptRunnerException.cs" />
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
@@ -62,8 +62,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Translator\Commands\EnterCommand.cs" />
     <Compile Include="Translator\Commands\GuiCommand.cs" />
+    <Compile Include="Translator\Commands\RemCommand.cs" />
     <Compile Include="Translator\Commands\StringCommand.cs" />
-    <Compile Include="Translator\DuckyCommandBase.cs" />
+    <Compile Include="Translator\Commands\DuckyCommandBase.cs" />
     <Compile Include="Translator\Converter.cs" />
     <Compile Include="Translator\DuckyTranslator.cs" />
     <Compile Include="Translator\IDuckyCommand.cs" />
