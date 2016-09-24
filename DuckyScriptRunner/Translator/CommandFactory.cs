@@ -19,18 +19,26 @@ namespace DuckyScriptRunner.Translator
 
             for (var i = 0; i < commandLines.Count; i++)
             {
-                var command = CreateCommand(commandLines[i]);
-                if (command.Name == "REPLAY")
+                try
                 {
-                    ReplayCommands(CreateCommand(commandLines[i-1]), Convert.ToInt32(command.Parameter), commands);
-                    continue;
-                }
+                    var command = CreateCommand(commandLines[i]);
+                    if (command.Name == "REPLAY")
+                    {
+                        ReplayCommands(CreateCommand(commandLines[i-1]), Convert.ToInt32(command.Parameter), commands);
+                        continue;
+                    }
 
-                commands.Add(command);
-                if (defaultDelay > 0)
+                    commands.Add(command);
+                    if (defaultDelay > 0)
+                    {
+                        if (IgnoreDelayForThisCommand(command)) continue;
+                        commands.Add(new DelayCommand() { Parameter = defaultDelay.ToString() });
+                    }
+
+                }
+                catch (Exception ex)
                 {
-                    if (IgnoreDelayForThisCommand(command)) continue;
-                    commands.Add(new DelayCommand() { Parameter = defaultDelay.ToString() });
+                    throw new DuckyScriptRunnerException($"ERROR with command {i}:" + Environment.NewLine + "'{commandLines[i]}'" + Environment.NewLine, ex);
                 }
             }
 

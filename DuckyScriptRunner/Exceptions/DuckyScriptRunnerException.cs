@@ -8,5 +8,9 @@ namespace DuckyScriptRunner.Exceptions
         {
             
         }
+
+        public DuckyScriptRunnerException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
     }
 }

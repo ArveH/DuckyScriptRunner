@@ -24,7 +24,7 @@ namespace DuckyScriptRunner.Translator.Commands
                 int tmp;
                 if (!int.TryParse(value, out tmp))
                 {
-                    throw new DuckyScriptRunnerException($"{value} not a legal value for DEFAULTDELAY");
+                    throw new DuckyScriptRunnerException($"'{value}' not a legal value for DEFAULTDELAY");
                 }
                 base.Parameter = value;
             }

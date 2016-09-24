@@ -32,12 +32,20 @@ namespace DuckyScriptRunner
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            var commandLines = LineSplitter.SplitIntoLines(txtScriptWindow.Text);
-            var commands = CommandFactory.CreateCommands(commandLines);
+            try
+            {
+                var commandLines = LineSplitter.SplitIntoLines(txtScriptWindow.Text);
+                var commands = CommandFactory.CreateCommands(commandLines);
 
-            var translator = new DuckyTranslator();
-            Thread.Sleep(500);
-            translator.Run(commands);
+                var translator = new DuckyTranslator();
+                Thread.Sleep(500);
+                translator.Run(commands);
+
+            }
+            catch (Exception ex)
+            {
+                txtMessages.AppendText(ex + Environment.NewLine);
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
