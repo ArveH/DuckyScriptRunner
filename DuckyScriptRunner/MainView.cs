@@ -42,6 +42,17 @@ namespace DuckyScriptRunner
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            using (var selectFileDialog = new SaveFileDialog())
+            {
+                if (selectFileDialog.ShowDialog() != DialogResult.OK) return;
+
+                var fileName = selectFileDialog.FileName;
+                File.WriteAllText(fileName, txtScriptWindow.Text);
+            }
+        }
+
         private void btnRun_Click(object sender, EventArgs e)
         {
             try

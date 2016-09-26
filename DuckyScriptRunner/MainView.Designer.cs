@@ -30,15 +30,16 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnRun = new System.Windows.Forms.Button();
             this.txtScriptWindow = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnLoadScript = new System.Windows.Forms.Button();
+            this.btnRun = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtMessages = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,17 +73,6 @@
             this.panel1.Size = new System.Drawing.Size(976, 620);
             this.panel1.TabIndex = 0;
             // 
-            // btnRun
-            // 
-            this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRun.Location = new System.Drawing.Point(9, 52);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(124, 37);
-            this.btnRun.TabIndex = 2;
-            this.btnRun.Text = "Run!";
-            this.btnRun.UseVisualStyleBackColor = true;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
-            // 
             // txtScriptWindow
             // 
             this.txtScriptWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -108,6 +98,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.btnLoadScript);
             this.panel2.Controls.Add(this.btnRun);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -129,6 +120,17 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(9, 52);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(124, 37);
+            this.btnSave.TabIndex = 4;
+            this.btnSave.Text = "Save as...";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // btnLoadScript
             // 
             this.btnLoadScript.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,9 +138,20 @@
             this.btnLoadScript.Name = "btnLoadScript";
             this.btnLoadScript.Size = new System.Drawing.Size(124, 37);
             this.btnLoadScript.TabIndex = 4;
-            this.btnLoadScript.Text = "Load Script";
+            this.btnLoadScript.Text = "Load script...";
             this.btnLoadScript.UseVisualStyleBackColor = true;
             this.btnLoadScript.Click += new System.EventHandler(this.btnLoadScript_Click);
+            // 
+            // btnRun
+            // 
+            this.btnRun.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRun.Location = new System.Drawing.Point(9, 133);
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(124, 37);
+            this.btnRun.TabIndex = 2;
+            this.btnRun.Text = "Run!";
+            this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // panel3
             // 
@@ -149,15 +162,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(976, 194);
             this.panel3.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Messages";
             // 
             // txtMessages
             // 
@@ -170,6 +174,15 @@
             this.txtMessages.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessages.Size = new System.Drawing.Size(966, 170);
             this.txtMessages.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Messages";
             // 
             // MainView
             // 
@@ -202,6 +215,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtMessages;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnSave;
     }
 }
 
